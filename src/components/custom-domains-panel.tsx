@@ -126,9 +126,9 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
       setHostname("");
       toast.success(
         payload.managed === true
-          ? `${domain.hostname} attached. Cognix created its DNS records.`
+          ? `${domain.hostname} attached. Curator Codes created its DNS records.`
           : payload.setup?.ready === false
-            ? `${domain.hostname} attached. Add the TXT record now; the routing record appears once Cognix is public.`
+            ? `${domain.hostname} attached. Add the TXT record now; the routing record appears once Curator Codes is public.`
             : `${domain.hostname} attached. Add the DNS records below, then check DNS.`,
       );
     } catch (error) {
@@ -200,7 +200,7 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
         <div className="domain-setup-notice" role="status">
           <CircleAlert className="size-3.5" aria-hidden="true" />
           <div>
-            <strong>Custom domains need a public Cognix address</strong>
+            <strong>Custom domains need a public Curator Codes address</strong>
             <p>{setup?.message}</p>
           </div>
         </div>
@@ -250,7 +250,7 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
 
       {loadState === "ready" && !domains.length ? (
         <p className="domain-empty">
-          No custom domain yet. Attach one to publish on your own address instead of a Cognix subpath.
+          No custom domain yet. Attach one to publish on your own address instead of a Curator Codes subpath.
         </p>
       ) : null}
 
@@ -283,7 +283,7 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
                     type="button"
                     onClick={() => void verifyDomain(domain)}
                     disabled={busy || routingUnavailable}
-                    title={routingUnavailable ? "Available once Cognix has a public address" : `Check DNS for ${domain.hostname}`}
+                    title={routingUnavailable ? "Available once Curator Codes has a public address" : `Check DNS for ${domain.hostname}`}
                   >
                     {busy ? (
                       <LoaderCircle className="size-3 animate-spin" aria-hidden="true" />
@@ -316,7 +316,7 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
                 <div className="domain-records">
                   <p>
                     {domain.managedByProvider
-                      ? "Cognix manages these records for you. Check DNS to confirm they resolved."
+                      ? "Curator Codes manages these records for you. Check DNS to confirm they resolved."
                       : "Create these records with your DNS provider, then check DNS."}
                   </p>
                   {domain.records.map((record) => (
@@ -324,7 +324,7 @@ export function CustomDomainsPanel({ projectId, published, disabled, refreshKey 
                   ))}
                   {domain.records.some((record) => record.purpose === "routing") ? null : (
                     <p className="domain-record-pending">
-                      The CNAME or A record that routes visitors appears here once Cognix runs on a public address.
+                      The CNAME or A record that routes visitors appears here once Curator Codes runs on a public address.
                     </p>
                   )}
                 </div>

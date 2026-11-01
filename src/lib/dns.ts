@@ -102,7 +102,7 @@ export async function verifyProjectDomain(domain: ProjectDomain): Promise<Projec
 
   const result = evaluateDomainVerification(domain, records, resolved);
   if (result.status === "active") {
-    // Correct DNS is not enough: the hosting proxy in front of Cognix must also accept this hostname.
+    // Correct DNS is not enough: the hosting proxy in front of Curator Codes must also accept this hostname.
     const serving = await probeDomainServing(domain.hostname, routingRecord?.value ?? null);
     if (!serving.ok && !(serving.transient && domain.status === "active")) {
       return (
@@ -157,24 +157,24 @@ async function fetchProbe(url: string) {
 }
 
 /**
- * Requests the Cognix probe path through the customer hostname. A different answer means DNS points at
+ * Requests the Curator Codes probe path through the customer hostname. A different answer means DNS points at
  * the right edge, but the reverse proxy there (Traefik, Caddy, Vercel, …) has no route for this hostname.
  */
 export async function probeDomainServing(hostname: string, routingTarget: string | null): Promise<ServingProbe> {
   const expected = domainProbeBody(hostname);
-  const target = routingTarget ?? "the Cognix server";
-  const fixHosting = `Add ${hostname} as a domain of the Cognix app on your hosting platform (for example the app's domain list in Dokploy, Coolify, or Vercel, or a catch-all Host rule in Traefik/Caddy) and make sure it issues TLS for it, then check again.`;
+  const target = routingTarget ?? "the Curator Codes server";
+  const fixHosting = `Add ${hostname} as a domain of the Curator Codes app on your hosting platform (for example the app's domain list in Dokploy, Coolify, or Vercel, or a catch-all Host rule in Traefik/Caddy) and make sure it issues TLS for it, then check again.`;
 
   try {
     const https = await fetchProbe(`https://${hostname}${DOMAIN_PROBE_PATH}`);
     if (https.status === 200 && https.body === expected) return { ok: true, transient: false, message: null };
     const detail = https.body === "no available server"
       ? "the reverse proxy answered “no available server” (HTTP 503)"
-      : `it answered HTTP ${https.status} from something other than Cognix`;
+      : `it answered HTTP ${https.status} from something other than Curator Codes`;
     return {
       ok: false,
       transient: false,
-      message: `DNS is correct, but ${hostname} does not reach Cognix yet: ${detail}. ${fixHosting}`,
+      message: `DNS is correct, but ${hostname} does not reach Curator Codes yet: ${detail}. ${fixHosting}`,
     };
   } catch {
     // HTTPS failed outright. Plain HTTP tells a missing certificate apart from an unreachable host.
@@ -186,7 +186,7 @@ export async function probeDomainServing(hostname: string, routingTarget: string
       return {
         ok: false,
         transient: false,
-        message: `${hostname} reaches Cognix over HTTP, but HTTPS failed. Issue a TLS certificate for ${hostname} on your hosting platform, then check again.`,
+        message: `${hostname} reaches Curator Codes over HTTP, but HTTPS failed. Issue a TLS certificate for ${hostname} on your hosting platform, then check again.`,
       };
     }
   } catch {
@@ -276,7 +276,7 @@ export async function provisionDomainDns(domain: Pick<ProjectDomain, "hostname" 
   return true;
 }
 
-/** Removes the records Cognix created for a domain. Failures are ignored: detaching must still succeed. */
+/** Removes the records Curator Codes created for a domain. Failures are ignored: detaching must still succeed. */
 export async function removeDomainDns(domain: Pick<ProjectDomain, "hostname" | "verificationToken">) {
   if (!isDnsProviderConfigured) return false;
   const zone = await findZone(domain.hostname).catch(() => null);

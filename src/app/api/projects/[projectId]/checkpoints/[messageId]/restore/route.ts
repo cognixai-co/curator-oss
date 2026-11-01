@@ -84,7 +84,7 @@ export async function POST(_request: Request, context: Context) {
     if (conflicts.length) {
       return Response.json(
         {
-          error: "This checkpoint has newer file changes on top of it. Restore the newest checkpoint or ask Cognix to undo the specific change.",
+          error: "This checkpoint has newer file changes on top of it. Restore the newest checkpoint or ask Curator Codes to undo the specific change.",
           conflicts,
         },
         { status: 409 },

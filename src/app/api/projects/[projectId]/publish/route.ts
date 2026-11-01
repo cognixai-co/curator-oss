@@ -40,7 +40,7 @@ function publishErrorMessage(error: unknown) {
   return [
     "## Publication failed",
     "",
-    "Cognix could not finish the production deployment.",
+    "Curator Codes could not finish the production deployment.",
     "",
     "```text",
     message.slice(-4000),

@@ -25,7 +25,7 @@ export async function POST(_request: Request, context: Context) {
     const result = await ensureVisualEditBridge(sandbox, root, getProjectFsRoot());
     if (!result.installed) {
       return Response.json(
-        { error: "Cognix could not find a Next.js root layout to enable visual selection." },
+        { error: "Curator Codes could not find a Next.js root layout to enable visual selection." },
         { status: 409 },
       );
     }

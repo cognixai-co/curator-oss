@@ -99,7 +99,7 @@ export function LandingShowcase({ isAuthConfigured }: { isAuthConfigured: boolea
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="landing-section-badge">
             <Sparkles className="size-3.5 text-indigo-400" />
-            <span>Built with Cognix</span>
+            <span>Built with Curator Codes</span>
           </div>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-white">
             Explore what developers are building.

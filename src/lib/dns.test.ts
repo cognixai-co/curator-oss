@@ -164,7 +164,7 @@ describe("stored verification outcome", () => {
     expect(domain.lastError).toContain("unrouted.example.com");
   });
 
-  it("explains a missing certificate when only plain HTTP reaches Cognix", async () => {
+  it("explains a missing certificate when only plain HTTP reaches Curator Codes", async () => {
     globalThis.fetch = dnsReadyFetch((url) => {
       if (url.protocol === "https:") throw new TypeError("certificate error");
       return new Response(`cognix-domain-check ${url.hostname}`, { status: 200 });

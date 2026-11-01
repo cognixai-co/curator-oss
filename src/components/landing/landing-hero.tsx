@@ -60,7 +60,7 @@ export function LandingHero({ isAuthConfigured }: { isAuthConfigured: boolean })
         {/* Release badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/25 bg-indigo-500/10 text-indigo-300 text-xs font-medium backdrop-blur-md">
           <Sparkles className="size-3.5 text-indigo-400" />
-          <span>Cognix Engine v2.0</span>
+          <span>Curator Codes Engine v2.0</span>
           <span className="text-white/30">|</span>
           <span className="text-white/80">Autonomous Full-Stack Workspaces</span>
         </div>
@@ -72,7 +72,7 @@ export function LandingHero({ isAuthConfigured }: { isAuthConfigured: boolean })
 
         {/* Subtitle */}
         <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed text-balance">
-          Describe what you want to build. Cognix provisions an isolated Daytona sandbox, writes Next.js and PostgreSQL code, and gives you a live interactive preview with visual click-to-edit.
+          Describe what you want to build. Curator Codes provisions an isolated Daytona sandbox, writes Next.js and PostgreSQL code, and gives you a live interactive preview with visual click-to-edit.
         </p>
 
         {/* Interactive Prompt Playground */}
@@ -122,7 +122,7 @@ export function LandingHero({ isAuthConfigured }: { isAuthConfigured: boolean })
                   aria-label="Start building app"
                 >
                   <Sparkles className="size-4 text-indigo-400" />
-                  <span>Build with Cognix</span>
+                  <span>Build with Curator Codes</span>
                   <ArrowRight className="size-4" />
                 </button>
               </div>

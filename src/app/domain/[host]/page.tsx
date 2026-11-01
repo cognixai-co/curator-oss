@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!published || !resolved) return { title: "App unavailable" };
   return {
     title: published.project.title,
-    description: published.project.description || "Built and published with Cognix.",
+    description: published.project.description || "Built and published with Curator Codes.",
     robots: { index: true, follow: true },
     alternates: { canonical: `${customDomainUrl(resolved.host)}${resolved.path === "/" ? "" : resolved.path}` },
   };

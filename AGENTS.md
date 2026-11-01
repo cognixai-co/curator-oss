@@ -1,8 +1,8 @@
-# Cognix product conventions
+# Curator Codes product conventions
 
 ## Product
 
-Cognix is a prompt-to-full-stack-app builder. The host product is a Next.js App Router application. Generated customer apps run inside Daytona sandboxes and are manipulated only through server-side agent tools.
+Curator Codes is a prompt-to-full-stack-app builder. The host product is a Next.js App Router application. Generated customer apps run inside Daytona sandboxes and are manipulated only through server-side agent tools.
 
 ## Required checks
 

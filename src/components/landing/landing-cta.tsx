@@ -18,7 +18,7 @@ export function LandingCTA({ isAuthConfigured }: { isAuthConfigured: boolean }) 
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-white/60 leading-relaxed text-balance">
-              Describe your software in natural language. Cognix writes the code, provisions the database, and spins up a live preview.
+              Describe your software in natural language. Curator Codes writes the code, provisions the database, and spins up a live preview.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

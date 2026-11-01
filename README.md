@@ -1,6 +1,6 @@
-# Cognix AI App Builder
+# Curator Codes
 
-Cognix is a full-stack prompt-to-app builder built with Next.js. It gives each project a Daytona development sandbox, streams an OpenAI-compatible coding agent into a Lovable-style workspace, persists product data in Neon PostgreSQL, authenticates users with Auth0, and stores uploads in private Google Cloud Storage.
+Curator Codes is a full-stack prompt-to-app builder built with Next.js. It gives each project a Daytona development sandbox, streams an OpenAI-compatible coding agent into a Lovable-style workspace, persists product data in Neon PostgreSQL, authenticates users with Auth0, and stores uploads in private Google Cloud Storage.
 
 ## Support Us
 
@@ -46,7 +46,7 @@ Requirements: Node.js 20 or newer and npm 10 or newer.
 1. Copy `.env.example` to `.env.local` and add provider values.
 2. Install dependencies with `npm install`.
 3. Apply the database schema with `npm run db:push`.
-4. Start Cognix with `npm run dev`.
+4. Start Curator Codes with `npm run dev`.
 5. Open `http://localhost:3000`.
 
 Without `DATABASE_URL`, projects use an empty in-memory development store and are lost when the server restarts. Configure Neon before creating real projects.
@@ -75,7 +75,7 @@ The checked-in SQL baseline is in `drizzle/0000_initial.sql`.
 
 ### Daytona
 
-Set `DAYTONA_API_KEY`. `DAYTONA_API_URL` defaults to `https://app.daytona.io/api`, and `DAYTONA_TARGET` selects the region. Cognix creates one labeled Node.js sandbox per project and uses automatic stop/archive intervals to control idle usage.
+Set `DAYTONA_API_KEY`. `DAYTONA_API_URL` defaults to `https://app.daytona.io/api`, and `DAYTONA_TARGET` selects the region. Curator Codes creates one labeled Node.js sandbox per project and uses automatic stop/archive intervals to control idle usage.
 
 ### OpenAI-compatible model
 
@@ -94,7 +94,7 @@ The provider must implement the OpenAI Chat Completions streaming and tool-calli
 Published apps can also be served on a domain the customer owns. Configure the routing targets:
 
 ```dotenv
-# Hosts that always serve Cognix itself. Routing stays disabled until one is known.
+# Hosts that always serve Curator Codes itself. Routing stays disabled until one is known.
 COGNIX_APP_HOSTS=cognix.example.com
 # What customer subdomains point at. Defaults to the APP_BASE_URL host.
 COGNIX_DOMAIN_CNAME_TARGET=cognix.example.com
@@ -104,22 +104,22 @@ COGNIX_DOMAIN_IPV4=203.0.113.10
 CLOUDFLARE_API_TOKEN=
 ```
 
-Attach a domain from the publish dialog. Cognix shows the two records to create: a `TXT` record at
+Attach a domain from the publish dialog. Curator Codes shows the two records to create: a `TXT` record at
 `_cognix-challenge.<host>` that proves ownership, and a `CNAME` (or `A` for a root domain) that routes traffic.
 
-The routing target must be reachable from the public internet. Cognix never offers `localhost`, private TLDs, or
+The routing target must be reachable from the public internet. Curator Codes never offers `localhost`, private TLDs, or
 private/loopback IPs as a target: when running locally it shows only the `TXT` record plus a notice explaining what to
-configure. To test end to end, deploy Cognix (or expose it through a tunnel) and set `COGNIX_DOMAIN_CNAME_TARGET` to
+configure. To test end to end, deploy Curator Codes (or expose it through a tunnel) and set `COGNIX_DOMAIN_CNAME_TARGET` to
 that public hostname. Your hosting platform must also accept the customer hostname and issue TLS for it (for example,
 add the domain to the project on Vercel, or use a reverse proxy with on-demand certificates such as Caddy).
 
 Deep links are forwarded: `https://app.customer.com/pricing?plan=pro` and `/publish/<slug>/pricing?plan=pro` open that
 same page inside the published app.
 Choosing **Check DNS** resolves both over DNS-over-HTTPS, then requests `https://<host>/.well-known/cognix-domain-check`
-to confirm traffic really reaches Cognix. A domain is marked live only when both succeed, so a reverse proxy that has
+to confirm traffic really reaches Curator Codes. A domain is marked live only when both succeed, so a reverse proxy that has
 no route for the hostname (Traefik's "no available server", for example) shows as **Needs attention** with the fix. Publishing a
 project re-checks every attached domain, so correct DNS activates without a second click. With
-`CLOUDFLARE_API_TOKEN` set and the zone in that account, Cognix creates and removes those records itself.
+`CLOUDFLARE_API_TOKEN` set and the zone in that account, Curator Codes creates and removes those records itself.
 
 Requests that arrive on an attached, live domain are served the published app only: the builder, its API, and Auth0
 are never reachable from a customer domain. Requests for an unknown slug or domain, or for a project that is no

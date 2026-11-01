@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: "App unavailable" };
   return {
     title: project.title,
-    description: project.description || `Built and published with Cognix.`,
+    description: project.description || `Built and published with Curator Codes.`,
     robots: { index: true, follow: true },
   };
 }

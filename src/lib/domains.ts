@@ -8,8 +8,8 @@ export const DOMAIN_HOST_HEADER = "x-cognix-domain-host";
 /** Set by the proxy so a custom domain deep link opens the same path inside the published app. */
 export const DOMAIN_PATH_HEADER = "x-cognix-domain-path";
 /**
- * Answered by the Cognix proxy itself on every hostname. Verification fetches it through the customer
- * domain to prove traffic really reaches Cognix, not just that DNS records exist.
+ * Answered by the Curator Codes proxy itself on every hostname. Verification fetches it through the customer
+ * domain to prove traffic really reaches Curator Codes, not just that DNS records exist.
  */
 export const DOMAIN_PROBE_PATH = "/.well-known/cognix-domain-check";
 
@@ -20,7 +20,7 @@ export function domainProbeBody(hostname: string) {
 const MAX_HOSTNAME_LENGTH = 253;
 const LABEL_PATTERN = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-// Special-use and loopback names can never point at a Cognix publication.
+// Special-use and loopback names can never point at a Curator Codes publication.
 const RESERVED_TLDS = new Set(["local", "localhost", "internal", "test", "invalid", "example", "onion", "home", "arpa"]);
 
 // Registrable suffixes that use two labels, so `example.co.uk` is an apex and needs an A record.
@@ -64,7 +64,7 @@ export type DomainTargets = {
 };
 
 /**
- * The environment values that describe where Cognix lives and where customer domains point:
+ * The environment values that describe where Curator Codes lives and where customer domains point:
  * APP_BASE_URL, COGNIX_APP_HOSTS, COGNIX_DOMAIN_CNAME_TARGET, COGNIX_DOMAIN_IPV4,
  * VERCEL_PROJECT_PRODUCTION_URL, and VERCEL_URL.
  */
@@ -90,7 +90,7 @@ export function hostnameFromHeader(value: string | null | undefined) {
   return hostnameFromValue(first);
 }
 
-/** Hosts that serve the Cognix product itself and can never be attached to a project. */
+/** Hosts that serve the Curator Codes product itself and can never be attached to a project. */
 export function appHostnames(env: DomainEnv = process.env) {
   const candidates = [
     env.APP_BASE_URL,
@@ -186,7 +186,7 @@ export function normalizeCustomHostname(input: string, env: DomainEnv = process.
     throw new DomainRequestError("Add the domain itself, not its verification record.");
   }
   if (isAppHostname(hostname, env)) {
-    throw new DomainRequestError("That hostname already belongs to Cognix. Use a domain you control.");
+    throw new DomainRequestError("That hostname already belongs to Curator Codes. Use a domain you control.");
   }
 
   return hostname;
@@ -246,13 +246,13 @@ export function domainSetup(env: DomainEnv = process.env): DomainSetup {
   }
   const configured = hostnameFromValue(env.COGNIX_DOMAIN_CNAME_TARGET ?? "") || appHostnames(env)[0] || "";
   const reason = configured
-    ? `Cognix is running on ${configured}, which the public internet cannot reach.`
-    : "Cognix does not know its public address yet.";
+    ? `Curator Codes is running on ${configured}, which the public internet cannot reach.`
+    : "Curator Codes does not know its public address yet.";
   return {
     ready: false,
     cname: null,
     ipv4: null,
-    message: `${reason} Deploy Cognix to a public host, then set COGNIX_DOMAIN_CNAME_TARGET (or APP_BASE_URL) to that hostname and restart the server.`,
+    message: `${reason} Deploy Curator Codes to a public host, then set COGNIX_DOMAIN_CNAME_TARGET (or APP_BASE_URL) to that hostname and restart the server.`,
   };
 }
 
@@ -285,7 +285,7 @@ export function dnsRecordsFor(
       purpose: "routing",
       note: apex
         ? "Root domains cannot use a CNAME, so they need an A record."
-        : "Points visitors at the Cognix server that serves your published app.",
+        : "Points visitors at the Curator Codes server that serves your published app.",
     });
     return records;
   }
@@ -299,7 +299,7 @@ export function dnsRecordsFor(
     purpose: "routing",
     note: apex
       ? "Use a provider that flattens CNAME records at the root, or ask your operator for an A record target."
-      : "Points visitors at the Cognix edge that serves your published app.",
+      : "Points visitors at the Curator Codes edge that serves your published app.",
   });
   return records;
 }

@@ -8,7 +8,7 @@ export default function NotFound() {
       <section className="not-published-card">
         <span className="not-published-brand">
           <BrandMark />
-          Cognix
+          Curator Codes
         </span>
         <p className="not-published-code">404</p>
         <h1>This project is not published</h1>
@@ -17,13 +17,13 @@ export default function NotFound() {
           moved it to a different domain.
         </p>
         <div className="not-published-actions">
-          <Link href="/">Build an app with Cognix</Link>
+          <Link href="/">Build an app with Curator Codes</Link>
           <a href="https://github.com/Raunak-dev-18/cognix-ai-appbuilder" target="_blank" rel="noreferrer">
             Read the docs
           </a>
         </div>
         <p className="not-published-hint">
-          If you own this project, open it in Cognix, publish the latest build, and confirm the domain shows as live.
+          If you own this project, open it in Curator Codes, publish the latest build, and confirm the domain shows as live.
         </p>
       </section>
     </main>

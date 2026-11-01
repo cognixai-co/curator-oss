@@ -5,24 +5,24 @@ import { useState } from "react";
 
 const FAQ_ITEMS = [
   {
-    question: "How does Cognix execute and run my generated full-stack code?",
+    question: "How does Curator Codes execute and run my generated full-stack code?",
     answer:
-      "Cognix spins up a secure, isolated Linux container via Daytona for every project. The container runs a real Node.js runtime with Next.js App Router, manages an active file system, compiles TypeScript, and exposes a live local development server that is tunneled directly to your browser preview.",
+      "Curator Codes spins up a secure, isolated Linux container via Daytona for every project. The container runs a real Node.js runtime with Next.js App Router, manages an active file system, compiles TypeScript, and exposes a live local development server that is tunneled directly to your browser preview.",
   },
   {
     question: "Can I export the full source code and run it locally?",
     answer:
-      "Yes! You have 100% ownership of everything created in Cognix with zero vendor lock-in. You can download the complete project as a standard Next.js application repository, complete with package.json, Tailwind config, Drizzle ORM schemas, and API routes, and run `npm run dev` on your own machine or deploy to Vercel/AWS.",
+      "Yes! You have 100% ownership of everything created in Curator Codes with zero vendor lock-in. You can download the complete project as a standard Next.js application repository, complete with package.json, Tailwind config, Drizzle ORM schemas, and API routes, and run `npm run dev` on your own machine or deploy to Vercel/AWS.",
   },
   {
     question: "How does the Visual Click-to-Edit feature work?",
     answer:
-      "Cognix injects a lightweight, bidirectional inspection bridge into your preview iframe. When you enable visual edit mode and click any button, card, or navigation element, Cognix extracts its DOM selector, React component hierarchy, and file path, automatically injecting this context into your next prompt.",
+      "Curator Codes injects a lightweight, bidirectional inspection bridge into your preview iframe. When you enable visual edit mode and click any button, card, or navigation element, Curator Codes extracts its DOM selector, React component hierarchy, and file path, automatically injecting this context into your next prompt.",
   },
   {
     question: "How does database persistence work with Neon PostgreSQL?",
     answer:
-      "Every project connects directly to a serverless Neon PostgreSQL database. Cognix uses Drizzle ORM to define type-safe database schemas and automatically applies schema migrations (`drizzle-kit push`). Your data persists across reloads, edits, and live user interactions.",
+      "Every project connects directly to a serverless Neon PostgreSQL database. Curator Codes uses Drizzle ORM to define type-safe database schemas and automatically applies schema migrations (`drizzle-kit push`). Your data persists across reloads, edits, and live user interactions.",
   },
   {
     question: "Is my code and uploaded data secure and private?",
@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
   {
     question: "Can I publish my application to a live public URL?",
     answer:
-      "Yes! Cognix offers one-click publishing. You can assign a custom subdomain (e.g. `your-app.cognix.app`) and publish your app instantly with global edge routing and SSL certificates.",
+      "Yes! Curator Codes offers one-click publishing. You can assign a custom subdomain (e.g. `your-app.cognix.app`) and publish your app instantly with global edge routing and SSL certificates.",
   },
 ];
 

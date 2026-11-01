@@ -114,7 +114,7 @@ export function DashboardComposer({ autoFocus = false }: { autoFocus?: boolean }
           }}
           rows={3}
           maxLength={12_000}
-          placeholder="Describe the app you want Cognix to build…"
+          placeholder="Describe the app you want Curator Codes to build…"
           aria-label="Describe the app you want to build"
           aria-describedby="composer-help"
         />

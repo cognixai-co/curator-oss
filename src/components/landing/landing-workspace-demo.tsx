@@ -36,7 +36,7 @@ export function LandingWorkspaceDemo() {
             <span>Interactive Simulator</span>
           </div>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-white">
-            See the Cognix Workspace in action.
+            See the Curator Codes Workspace in action.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/60">
             A full-stack IDE, live hot-reloaded browser preview, and visual click-to-edit inspector—all powered by Daytona Linux sandboxes.

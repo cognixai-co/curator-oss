@@ -12,7 +12,7 @@ export function ProjectCard({ project, viewer }: { project: Project; viewer: Vie
           <span className="project-cover-initial">{project.title.charAt(0).toUpperCase()}</span>
           <div>
             <strong>{project.title}</strong>
-            <p>{project.description || "Created with Cognix"}</p>
+            <p>{project.description || "Created with Curator Codes"}</p>
           </div>
         </div>
         <span className="project-status">

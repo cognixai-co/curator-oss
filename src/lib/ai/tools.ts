@@ -406,7 +406,7 @@ async function fetchPublicText(value: string, redirects = 0): Promise<{
     signal: AbortSignal.timeout(15_000),
     headers: {
       Accept: "text/html, text/plain, application/json, application/xml;q=0.9, */*;q=0.1",
-      "User-Agent": "Cognix-Agent/1.0",
+      "User-Agent": "Curator-Codes-Agent/1.0",
     },
   });
   if ([301, 302, 303, 307, 308].includes(response.status)) {
@@ -625,7 +625,7 @@ export async function executeAgentTool(
     const relative = projectRelativePath(root, input.path);
     if (!relative) throw new Error("A file path is required.");
     if (relative === "public/__cognix_visual_edit.js") {
-      throw new Error("This Cognix-managed preview file cannot be deleted.");
+      throw new Error("This Curator Codes-managed preview file cannot be deleted.");
     }
     const fsTarget = remotePath(fsRoot, relative);
     const content = textFileContent(await sandbox.fs.downloadFile(fsTarget), relative);

@@ -9,7 +9,7 @@ export const SECRET_NAME_PATTERN = /^[A-Z][A-Z0-9_]{0,63}$/;
 export const MAX_SECRET_VALUE_LENGTH = 16_000;
 export const MAX_SECRETS_PER_PROJECT = 100;
 
-/** Names Cognix sets itself. Users can see them but cannot overwrite or delete them. */
+/** Names Curator Codes sets itself. Users can see them but cannot overwrite or delete them. */
 export const RESERVED_SECRET_NAMES = new Set([
   "CI",
   "NODE_ENV",
@@ -58,7 +58,7 @@ export function quoteEnvValue(value: string) {
 }
 
 export function renderEnvFile(values: Record<string, string>) {
-  const lines = ["# Managed by Cognix. Edit secrets in the Cognix workspace; local edits are overwritten."];
+  const lines = ["# Managed by Curator Codes. Edit secrets in the Curator Codes workspace; local edits are overwritten."];
   for (const name of Object.keys(values).sort()) {
     if (validateSecretName(name)) continue;
     lines.push(`${name}=${quoteEnvValue(values[name])}`);

@@ -8,9 +8,9 @@ export function LandingFooter() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/8">
           {/* Brand & summary */}
           <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Cognix home">
+            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Curator Codes home">
               <BrandMark className="size-6" />
-              <span className="text-base font-semibold tracking-[-0.02em] text-white">Cognix</span>
+              <span className="text-base font-semibold tracking-[-0.02em] text-white">Curator Codes</span>
             </Link>
             <p className="text-xs text-white/50 leading-relaxed max-w-sm">
               The autonomous AI full-stack application builder. From prompt to running software inside isolated Daytona Linux sandboxes, backed by serverless Neon PostgreSQL.
@@ -65,7 +65,7 @@ export function LandingFooter() {
 
         {/* Bottom copyright row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} Cognix AI App Builder. Open source under Apache 2.0.</p>
+          <p>© {new Date().getFullYear()} Curator Codes. Open source under Apache 2.0.</p>
           <p className="font-mono text-[11px] text-white/30">
             Built with Next.js App Router · Daytona · Neon
           </p>

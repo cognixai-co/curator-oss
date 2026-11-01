@@ -18,10 +18,10 @@ function agentErrorMessage(error: unknown) {
   if (status === 429) return "The model provider rate limit was reached. Wait a moment, then try again.";
   const message = error instanceof Error ? error.message : "";
   if (/development server did not start|dependency installation failed|trying to use TypeScript/i.test(message)) {
-    return "The generated preview could not start, but your files were saved. Ask Cognix to repair the preview and it will inspect the existing app and continue.";
+    return "The generated preview could not start, but your files were saved. Ask Curator Codes to repair the preview and it will inspect the existing app and continue.";
   }
   if (/controller is already closed/i.test(message)) {
-    return "The browser disconnected while Cognix was responding. Your saved files are intact; send the next instruction to continue.";
+    return "The browser disconnected while Curator Codes was responding. Your saved files are intact; send the next instruction to continue.";
   }
   return message || "The build paused unexpectedly. Try again.";
 }

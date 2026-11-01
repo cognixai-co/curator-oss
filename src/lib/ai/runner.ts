@@ -53,7 +53,7 @@ export async function runAgent(input: {
   if (!isAgentConfigured) {
     await emit({ type: "status", label: "Waiting for a model connection" });
     const content =
-      "Cognix is ready to build this project, but the model connection is incomplete. Add OPENAI_API_KEY and OPENAI_MODEL (plus OPENAI_BASE_URL for your custom provider), then send this prompt again.";
+      "Curator Codes is ready to build this project, but the model connection is incomplete. Add OPENAI_API_KEY and OPENAI_MODEL (plus OPENAI_BASE_URL for your custom provider), then send this prompt again.";
     for (const chunk of content.match(/.{1,28}/g) ?? [content]) {
       await emit({ type: "token", value: chunk });
     }
@@ -106,7 +106,7 @@ export async function runAgent(input: {
   const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: process.env.OPENAI_BASE_URL || undefined,
-    defaultHeaders: { "User-Agent": "Cognix/1.0" },
+    defaultHeaders: { "User-Agent": "Curator-Codes/1.0" },
   });
 
   const history: ChatCompletionMessageParam[] = input.history
@@ -316,7 +316,7 @@ export async function runAgent(input: {
     finalContent = [
       "## Build checkpoint",
       "",
-      "Cognix used the available execution budget and saved every completed file change.",
+      "Curator Codes used the available execution budget and saved every completed file change.",
       "",
       "The live app has been verified below. You can continue refining it with another instruction without starting over.",
     ].join("\n");
@@ -324,7 +324,7 @@ export async function runAgent(input: {
 
   await emit({ type: "status", label: "Finishing the live preview" });
   const packageCheck = await sandbox.process.executeCommand("test -f package.json", projectRoot, undefined, 10);
-  if (packageCheck.exitCode !== 0) throw new Error("The generated app is missing package.json. Ask Cognix to repair the project and try again.");
+  if (packageCheck.exitCode !== 0) throw new Error("The generated app is missing package.json. Ask Curator Codes to repair the project and try again.");
   await ensureVisualEditBridge(sandbox, projectRoot, projectFsRoot).catch(() => null);
 
   let health = await getPreviewHealth(sandbox, 3000);

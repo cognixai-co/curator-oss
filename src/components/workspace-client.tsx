@@ -419,16 +419,16 @@ function PublishDialog({
 function assistantContent(message: Message) {
   if (message.metadata.error !== true) return message.content;
   if (/controller is already closed/i.test(message.content)) {
-    return "## Build interrupted\n\nThe browser refreshed while Cognix was responding. Your saved files were not removed; send the next instruction to continue.";
+    return "## Build interrupted\n\nThe browser refreshed while Curator Codes was responding. Your saved files were not removed; send the next instruction to continue.";
   }
   if (/reached its tool limit|execution budget/i.test(message.content)) {
-    return "## Build checkpoint saved\n\nCognix saved the files completed so far. Continue the build to inspect the existing app, finish the remaining work, and repair the preview without starting over.";
+    return "## Build checkpoint saved\n\nCurator Codes saved the files completed so far. Continue the build to inspect the existing app, finish the remaining work, and repair the preview without starting over.";
   }
   if (/development server did not start|missingDependency|trying to use TypeScript/i.test(message.content)) {
-    return "## Preview needs repair\n\nThe generated development server could not start, but the project files were saved. Ask Cognix to **repair the preview** and it will inspect the current app and continue from those files.";
+    return "## Preview needs repair\n\nThe generated development server could not start, but the project files were saved. Ask Curator Codes to **repair the preview** and it will inspect the current app and continue from those files.";
   }
   if (message.content.length > 1_200) {
-    return "## Build paused\n\nThe generated app returned a long server error. Your files were saved; ask Cognix to inspect the preview logs and repair the existing app.";
+    return "## Build paused\n\nThe generated app returned a long server error. Your files were saved; ask Curator Codes to inspect the preview logs and repair the existing app.";
   }
   return message.content;
 }
@@ -879,7 +879,7 @@ export function WorkspaceClient({
       } catch (error) {
         const rawMessage = error instanceof Error ? error.message : "";
         const message = /failed to fetch|network|load failed|quic|aborted/i.test(rawMessage)
-          ? "The live build connection dropped while Cognix was working. Your sandbox may still be saving changes; wait a moment, refresh the project, then continue the build."
+          ? "The live build connection dropped while Curator Codes was working. Your sandbox may still be saving changes; wait a moment, refresh the project, then continue the build."
           : rawMessage || "The build paused. Try again.";
         setProject((current) => ({ ...current, status: "error" }));
         toast.error(message);
@@ -1080,7 +1080,7 @@ export function WorkspaceClient({
         onUnpublish={() => void unpublishProject()}
       />
       <aside className="workspace-rail" aria-label="Workspace navigation">
-        <Link href="/" className="grid size-9 place-items-center rounded-lg" aria-label="Cognix dashboard"><BrandMark className="size-5" /></Link>
+        <Link href="/" className="grid size-9 place-items-center rounded-lg" aria-label="Curator Codes dashboard"><BrandMark className="size-5" /></Link>
         <div className="mt-6 flex flex-col gap-2">
           <Link href="/" className="workspace-rail-button" aria-label="Dashboard"><Home className="size-4" /></Link>
           <button type="button" className="workspace-rail-button is-active" aria-label="Project chat"><MessageSquare className="size-4" /></button>
@@ -1266,7 +1266,7 @@ export function WorkspaceClient({
                 <textarea
                   value={prompt}
                   rows={2}
-                  placeholder="Ask Cognix…"
+                  placeholder="Ask Curator Codes…"
                   aria-label="Continue building this app"
                   onChange={(event) => setPrompt(event.target.value)}
                   onPaste={(event) => {

@@ -15,9 +15,9 @@ export function LandingNav({ isAuthConfigured }: { isAuthConfigured: boolean }) 
     <header className="landing-nav-wrap">
       <nav className="landing-nav" aria-label="Main navigation">
         <div className="flex items-center gap-6">
-          <Link href="/" className="inline-flex items-center gap-2.5 group" aria-label="Cognix home">
+          <Link href="/" className="inline-flex items-center gap-2.5 group" aria-label="Curator Codes home">
             <BrandMark className="size-6 transition-transform group-hover:scale-105" />
-            <span className="text-[15px] font-semibold tracking-[-0.02em] text-white">Cognix</span>
+            <span className="text-[15px] font-semibold tracking-[-0.02em] text-white">Curator Codes</span>
             <span className="landing-nav-version-badge">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
               v2.0
@@ -39,7 +39,7 @@ export function LandingNav({ isAuthConfigured }: { isAuthConfigured: boolean }) 
             target="_blank"
             rel="noopener noreferrer"
             className="landing-github-link"
-            aria-label="Cognix on GitHub"
+            aria-label="Curator Codes on GitHub"
           >
             <GithubIcon className="size-4" />
             <span className="hidden sm:inline">Star</span>

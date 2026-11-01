@@ -22,9 +22,9 @@ export function Sidebar({ viewer, projects, active = "dashboard" }: SidebarProps
   return (
     <aside className="dashboard-sidebar" aria-label="Primary navigation">
       <div className="flex h-14 items-center px-4">
-        <Link href="/" className="inline-flex items-center gap-2 rounded-md" aria-label="Cognix home">
+        <Link href="/" className="inline-flex items-center gap-2 rounded-md" aria-label="Curator Codes home">
           <BrandMark className="size-5" />
-          <span className="text-[13px] font-semibold tracking-[-0.01em]">Cognix</span>
+          <span className="text-[13px] font-semibold tracking-[-0.01em]">Curator Codes</span>
         </Link>
       </div>
 

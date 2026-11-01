@@ -15,7 +15,7 @@ const STEPS = [
     step: "02",
     title: "Autonomous Daytona Execution",
     description:
-      "Cognix launches an isolated Daytona Linux container, scaffolds Next.js App Router code, installs npm dependencies, and provisions Neon PostgreSQL.",
+      "Curator Codes launches an isolated Daytona Linux container, scaffolds Next.js App Router code, installs npm dependencies, and provisions Neon PostgreSQL.",
     icon: Cpu,
     badge: "Daytona Sandboxes",
     codeSnippet: `[daytona] Initializing isolated Linux sandbox\n[daytona] Port 3000 mapped -> live dev server running`,
@@ -54,7 +54,7 @@ export function LandingHowItWorks() {
             <span>Autonomous Pipeline</span>
           </div>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-white">
-            How Cognix builds software from ideas.
+            How Curator Codes builds software from ideas.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/60">
             From initial prompt to production deployment in four autonomous steps.

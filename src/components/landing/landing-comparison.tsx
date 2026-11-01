@@ -50,10 +50,10 @@ export function LandingComparison() {
             <span>Technical Architecture</span>
           </div>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-white">
-            Why Cognix is fundamentally different.
+            Why Curator Codes is fundamentally different.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/60">
-            Compare traditional AI code generators with Cognix&apos;s isolated container engine.
+            Compare traditional AI code generators with Curator Codes&apos;s isolated container engine.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export function LandingComparison() {
                   <th className="py-4 px-5 text-xs font-bold text-indigo-300 uppercase tracking-wider bg-indigo-500/10 border-x border-indigo-500/20 w-1/3">
                     <span className="inline-flex items-center gap-1.5">
                       <Sparkles className="size-3.5 text-indigo-400" />
-                      Cognix Full-Stack Engine
+                      Curator Codes Full-Stack Engine
                     </span>
                   </th>
                   <th className="py-4 px-5 text-xs font-semibold text-white/40 uppercase tracking-wider w-1/3">

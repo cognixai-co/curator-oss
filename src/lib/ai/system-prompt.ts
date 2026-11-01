@@ -5,7 +5,7 @@ export function buildSystemPrompt(project: Project, projectRoot: string, attachm
     ? attachments.map((item) => `- ${item.name}: ${item.sandboxPath ?? "not copied to sandbox"}`).join("\n")
     : "- No attachments for this turn.";
 
-  return `You are Cognix, a senior product engineer operating a complete remote development environment for one user project.
+  return `You are Curator Codes, a senior product engineer operating a complete remote development environment for one user project.
 
 ## Environment
 
@@ -54,7 +54,7 @@ export function buildSystemPrompt(project: Project, projectRoot: string, attachm
 - Use filesystem editing tools for source changes; do not use shell redirection or terminal text-rewrite commands because those bypass the saved file mirror.
 - Use move_file and delete_file for reviewable source renames and removals. Do not hide source changes inside terminal commands.
 - Check imports, callers, shared types, and responsive states affected by an edit, then verify the existing app still works.
-- Preserve the Cognix-managed \`public/__cognix_visual_edit.js\` asset and the \`cognix:visual-edit\` script marker in the root layout. They power preview element selection and are not application features to rewrite or remove.
+- Preserve the Curator Codes-managed \`public/__cognix_visual_edit.js\` asset and the \`cognix:visual-edit\` script marker in the root layout. They power preview element selection and are not application features to rewrite or remove.
 
 ## Visual element references
 
@@ -89,7 +89,7 @@ export function buildSystemPrompt(project: Project, projectRoot: string, attachm
 ## Interface quality bar
 
 - Build mobile-first responsive interfaces that work from 320 px upward. Use content-driven breakpoints and CSS media or container queries; do not detect devices in JavaScript or create separate phone, tablet, and desktop pages.
-- Design and review against Cognix's preview widths:
+- Design and review against Curator Codes's preview widths:
   - Phone: 390 px reference; remain usable from 320-479 px.
   - Tablet: 768 px reference; remain usable from 600-1023 px in portrait and landscape.
   - Desktop: fluid from 1024 px upward; use 1440 px as the reference for wide layouts.

@@ -47,7 +47,7 @@ export async function POST(request: Request, context: Context) {
       throw new DomainRequestError(
         existing.projectId === project.id
           ? "That domain is already attached to this project."
-          : "That domain is already attached to another Cognix project.",
+          : "That domain is already attached to another Curator Codes project.",
         409,
       );
     }
@@ -78,7 +78,7 @@ export async function POST(request: Request, context: Context) {
   } catch (error) {
     const code = typeof error === "object" && error && "code" in error ? String(error.code) : "";
     if (code === "23505") {
-      return Response.json({ error: "That domain is already attached to a Cognix project." }, { status: 409 });
+      return Response.json({ error: "That domain is already attached to a Curator Codes project." }, { status: 409 });
     }
     return errorResponse(error);
   }

@@ -87,7 +87,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ f
                 <div className="max-w-xs">
                   <span className="mx-auto grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[.04] text-white/65"><Plus className="size-4" /></span>
                   <p className="mt-4 text-sm font-medium">Create your first project</p>
-                  <p className="mt-1 text-xs leading-5 text-white/40">Describe the app above. Cognix will open a real workspace and begin building it.</p>
+                  <p className="mt-1 text-xs leading-5 text-white/40">Describe the app above. Curator Codes will open a real workspace and begin building it.</p>
                   <Link href="/?focus=search#create-project" className="mt-4 inline-flex text-[12px] font-medium text-[#b8b0ff] hover:text-white">Go to the prompt <ArrowRight className="ml-1 size-3.5" /></Link>
                 </div>
               </div>

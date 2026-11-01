@@ -14,7 +14,7 @@ export function LandingFeatures() {
             Engineered for real full-stack software.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/60">
-            Cognix combines autonomous agent planning with real Linux sandbox execution, relational databases, and visual debugging.
+            Curator Codes combines autonomous agent planning with real Linux sandbox execution, relational databases, and visual debugging.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export function LandingFeatures() {
                 Isolated Daytona Container Sandboxes
               </h3>
               <p className="mt-2 text-sm text-white/60 leading-relaxed max-w-xl">
-                Every project runs in its own dedicated Daytona container. Cognix executes real terminal commands, installs any npm package, builds Next.js App Router applications, and streams hot-reloaded dev servers securely.
+                Every project runs in its own dedicated Daytona container. Curator Codes executes real terminal commands, installs any npm package, builds Next.js App Router applications, and streams hot-reloaded dev servers securely.
               </p>
             </div>
 
@@ -63,7 +63,7 @@ export function LandingFeatures() {
                 Visual Click-to-Edit Bridge
               </h3>
               <p className="mt-2 text-sm text-white/60 leading-relaxed">
-                Click any DOM element in your live running preview. Cognix pinpoints the exact React component in code and lets you prompt refinements without manual searching.
+                Click any DOM element in your live running preview. Curator Codes pinpoints the exact React component in code and lets you prompt refinements without manual searching.
               </p>
             </div>
 
@@ -87,7 +87,7 @@ export function LandingFeatures() {
                 Serverless Neon PostgreSQL
               </h3>
               <p className="mt-2 text-sm text-white/60 leading-relaxed">
-                Automatic relational persistence. Cognix writes Drizzle ORM schemas, handles migrations, and stores real application data with zero external database configuration.
+                Automatic relational persistence. Curator Codes writes Drizzle ORM schemas, handles migrations, and stores real application data with zero external database configuration.
               </p>
             </div>
 
